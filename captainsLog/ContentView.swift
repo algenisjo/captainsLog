@@ -7,11 +7,32 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
+    //-----------------------
+    var date = Date.now.formatted(.dateTime.day().month().year())
+    @State private var textInput = " "
+    //-----------------------
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView{
+            Form{
+                TextField("Type here.", text: $textInput)
+                    .navigationTitle(date)
+                    //.navigationBarTitleDisplayMode(.inline)
+                    .toolbar{
+                        ToolbarItem(content: {
+                            Button("Submit") {
+                                //more code to come
+                                
+                            }
+                        })
+                    }
+            }
+        }
     }
+    //-----------------------
+    //-----------------------
 }
 
 struct ContentView_Previews: PreviewProvider {

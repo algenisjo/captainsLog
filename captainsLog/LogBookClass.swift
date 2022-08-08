@@ -7,16 +7,17 @@
 
 import SwiftUI
 
-class LogBook: ObservableObject {
+class LogBookClass: ObservableObject{
+    
     @Published var logBookNotes = [note](){
+        //  everytime my array changes (didset) these changes (whatever functionality i place inside the function) will be saved
         didSet {
-            //lets save the data using json encoder below
+            //  lets save the data using json encoder below
             if let encoded = try? JSONEncoder().encode(logBookNotes){
-                //save an instance of this variable habit
                 UserDefaults.standard.set(encoded, forKey: "LogBookNotes")
-                //save this instance under the key "Habit"
+                //  save this instance under the key "LogBookNotes"
             }
-        }//everytime my array changes (didset) these changes (whatever functionality i place inside the function) will be saved
+        }
     }
     
     // to load the data we saved above when the app relaunches we
@@ -31,3 +32,4 @@ class LogBook: ObservableObject {
         logBookNotes  = []
     }
 }
+

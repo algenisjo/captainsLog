@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var myLogBook = LogBook()
+    @StateObject var myLogBook = LogBookClass()
     var date = Date.now.formatted(.dateTime.day().month().year())
     @State private var textInput = ""
     @State private var AddNewNoteViewIsPresented = false
@@ -17,8 +17,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             List{
-                
-                ForEach(myLogBook.logBookNotes){ item in
+                ForEach(myLogBook.logBookNotes.reversed()){ item in
                     Section(date){
                         VStack(alignment: .leading){
                             Text("\(item.note)")
@@ -28,7 +27,6 @@ struct ContentView: View {
                         }
                     }
                 }
-                
             }
             .navigationTitle("Captain's Log")
             .navigationBarTitleDisplayMode(.inline)

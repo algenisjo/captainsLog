@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddNewNoteView: View {
     
-    @ObservedObject var myLogBook = LogBook()
+    @ObservedObject var myLogBook = LogBookClass()
     @Environment(\.dismiss) var dismiss
     @State private var notes = ""
     

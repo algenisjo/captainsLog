@@ -54,14 +54,9 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-/// make items in the list deletable.
-/// ....--------whenever i delete an item its remove the last item and not the item i am actually swiping on.
-/// - change the header to be my username Captain Algenis
-/// - allow for locking the app behind a passcode or face id
-/// - use mvvm to organize files
-/// - create the macbook pro version of this app
-///
 
-//myLogBook.logBookNotes.reversed() add this code to make the
+// allow users to upload photos
+//change the header to be my username Captain Algenis
+//allow for locking the app behind a passcode or face id
+//create the macbook pro version of this app
 
-// come up with a new way of deleting notes....

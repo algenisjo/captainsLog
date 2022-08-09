@@ -27,7 +27,11 @@ struct ContentView: View {
                         }
                     }
                 }
-                .onDelete(perform: removeItems)
+                .onDelete { offsets in
+                    let reversed = Array(myLogBook.logBookNotes.reversed()) //get the reversed array -- use Array() so we don't get a ReversedCollection
+                    let items = Set(offsets.map { reversed[$0].id }) //get the IDs to delete
+                    myLogBook.logBookNotes.removeAll { items.contains($0.id) } //remove the items with IDs that match the Set
+                }
             }
             .navigationTitle("Captain's Log")
             .navigationBarTitleDisplayMode(.inline)
@@ -43,9 +47,6 @@ struct ContentView: View {
             }
         }
     }
-    func removeItems(at offsets: IndexSet) {
-        myLogBook.logBookNotes.remove(atOffsets: offsets)
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -53,18 +54,11 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-
-/// - Done.------------------ save the items with user defaults
-/// Done. ---------resort  array so that newest item is at the top of the list.
 /// make items in the list deletable.
 /// ....--------whenever i delete an item its remove the last item and not the item i am actually swiping on.
-/// -  - Done.------------- create a second page to view the list of items. keep the first page for just journaling
-/// - create a way to add images
 /// - change the header to be my username Captain Algenis
 /// - allow for locking the app behind a passcode or face id
 /// - use mvvm to organize files
-/// - allow for different wallpapers to be used
 /// - create the macbook pro version of this app
 ///
 

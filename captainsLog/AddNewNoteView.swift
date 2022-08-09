@@ -38,20 +38,4 @@ struct AddView_Previews: PreviewProvider {
         AddNewNoteView()
     }
 }
-//
-//VStack{
-//Form {
-//    TextEditor(text: $notes)
-////                    .lineLimit(5)
-////                Spacer()
-////                Form {
-//        //                                 Spacer(minLength: 8)
-//        TextEditor(text: $notes)
-//        //                                     .padding(.all, 1.0)
-////                        .padding(10)
-//        //                         .background(Color(.sRGB, red: 0.9, green: 0.9, blue: 0.9, opacity: 0.9))
-////                        .cornerRadius(20)
-////                }
-//
-//}
-////            .padding()
+

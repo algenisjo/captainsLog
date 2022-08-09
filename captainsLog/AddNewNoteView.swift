@@ -18,26 +18,40 @@ struct AddNewNoteView: View {
     var body: some View {
         
         NavigationView{
-            VStack{
-                TextField("Type Here!", text: $notes)
-                Spacer()
+            Form{
+                TextEditor(text: $notes)
             }
-            .padding()
-            .navigationTitle(date) 
-                .toolbar{
-                    Button("Save"){
-                        let newNote = note(note: notes, date: date)
-                        myLogBook.logBookNotes.append(newNote)
-                        dismiss()
-                    }
+            .navigationTitle(date)
+            .toolbar{
+                Button("Save"){
+                    let newNote = note(note: notes, date: date)
+                    myLogBook.logBookNotes.append(newNote)
+                    dismiss()
+                }
                 
             }
         }
     }
 }
-
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
         AddNewNoteView()
     }
 }
+//
+//VStack{
+//Form {
+//    TextEditor(text: $notes)
+////                    .lineLimit(5)
+////                Spacer()
+////                Form {
+//        //                                 Spacer(minLength: 8)
+//        TextEditor(text: $notes)
+//        //                                     .padding(.all, 1.0)
+////                        .padding(10)
+//        //                         .background(Color(.sRGB, red: 0.9, green: 0.9, blue: 0.9, opacity: 0.9))
+////                        .cornerRadius(20)
+////                }
+//
+//}
+////            .padding()

@@ -27,6 +27,7 @@ struct ContentView: View {
                         }
                     }
                 }
+                .onDelete(perform: removeItems)
             }
             .navigationTitle("Captain's Log")
             .navigationBarTitleDisplayMode(.inline)
@@ -42,6 +43,9 @@ struct ContentView: View {
             }
         }
     }
+    func removeItems(at offsets: IndexSet) {
+        myLogBook.logBookNotes.remove(atOffsets: offsets)
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -52,8 +56,9 @@ struct ContentView_Previews: PreviewProvider {
 
 
 /// - Done.------------------ save the items with user defaults
-/// resort  array so that newest item is at the top of the list.
+/// Done. ---------resort  array so that newest item is at the top of the list.
 /// make items in the list deletable.
+/// ....--------whenever i delete an item its remove the last item and not the item i am actually swiping on.
 /// -  - Done.------------- create a second page to view the list of items. keep the first page for just journaling
 /// - create a way to add images
 /// - change the header to be my username Captain Algenis
@@ -62,3 +67,7 @@ struct ContentView_Previews: PreviewProvider {
 /// - allow for different wallpapers to be used
 /// - create the macbook pro version of this app
 ///
+
+//myLogBook.logBookNotes.reversed() add this code to make the
+
+// come up with a new way of deleting notes....

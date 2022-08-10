@@ -53,20 +53,24 @@ struct ContentView: View {
             .sheet(isPresented: $showSettings){
                 SettingsView()
             }
+//            .preferredColorScheme(preferredColorScheme)
         }
     }
+    
+   
+    
 }
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+//            .preferredColorScheme(.dark)
     }
 }
 
 // allow users to upload photos ------ challenging
 
-//change the header to be my username Captain Algenis
 //allow for locking the app behind a passcode or face id
 //create the macbook pro version of this app
 

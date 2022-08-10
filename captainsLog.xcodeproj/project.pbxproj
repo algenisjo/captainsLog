@@ -60,11 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				3F04108C286B7300005B1662 /* captainsLogApp.swift */,
-				3F04108E286B7300005B1662 /* ContentView.swift */,
-				791671C328A15CD1009A12C5 /* LogBookClass.swift */,
-				791671C128A15C71009A12C5 /* LogBookBrain.swift */,
-				791671BF28A156C5009A12C5 /* AddNewNoteView.swift */,
-				791671C528A2B84C009A12C5 /* ImagePicker.swift */,
+				79FC081028A4060500B463FB /* Model */,
+				79FC080F28A405F400B463FB /* View */,
+				79FC081128A4061800B463FB /* Controller */,
 				3F041090286B7302005B1662 /* Assets.xcassets */,
 				3F041092286B7302005B1662 /* Preview Content */,
 			);
@@ -77,6 +75,32 @@
 				3F041093286B7302005B1662 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		79FC080F28A405F400B463FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				791671BF28A156C5009A12C5 /* AddNewNoteView.swift */,
+				3F04108E286B7300005B1662 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		79FC081028A4060500B463FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				791671C128A15C71009A12C5 /* LogBookBrain.swift */,
+				791671C328A15CD1009A12C5 /* LogBookClass.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		79FC081128A4061800B463FB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				791671C528A2B84C009A12C5 /* ImagePicker.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

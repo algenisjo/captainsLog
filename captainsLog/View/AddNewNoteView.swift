@@ -5,8 +5,6 @@
 //  Created by Algenis Joaquin Ortiz on 8/8/22.
 //
 
-import CoreImage
-import CoreImage.CIFilterBuiltins
 import SwiftUI
 
 struct AddNewNoteView: View {
@@ -20,6 +18,8 @@ struct AddNewNoteView: View {
     @State private var image: Image?
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
+    
+    //    @State private var imageData: Data?
     
     var body: some View {
         NavigationView{
@@ -38,22 +38,17 @@ struct AddNewNoteView: View {
                         TextEditor(text: $notes)
                         
                     }
-                }
-                
-                HStack{
-                    Spacer()
-                    Button("Add Image") {
-                        showingImagePicker = true
+                    HStack{
+                        Spacer()
+                        Button("Upload."){
+                            //                        image = Data(Image?)
+                            let newNote = note(note: notes, date: date)
+                            //                        let newNote = note(note: notes, date: date, image: imageData)
+                            myLogBook.logBookNotes.append(newNote)
+                            dismiss()
+                        }
                     }
-                    Spacer()
-                    Button("Save Note"){
-                        let newNote = note(note: notes, date: date)
-                        myLogBook.logBookNotes.append(newNote)
-                        dismiss()
-                    }
-                    Spacer()
                 }
-                
             }
             .navigationTitle(date)
         }

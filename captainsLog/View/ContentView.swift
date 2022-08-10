@@ -10,15 +10,19 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject var myLogBook = LogBookClass()
-    var date = Date.now.formatted(.dateTime.day().month().year())
     @State private var textInput = ""
     @State private var AddNewNoteViewIsPresented = false
+//    @State private var Username = ""
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             List{
+//                Section("s"){
+//                    Text(Username)
+//                    TextField("Type your name here.", text: $Username)
+//                }
                 ForEach(myLogBook.logBookNotes.reversed()){ item in
-                    Section(date){
+                    Section(item.date){
                         VStack(alignment: .leading){
                             Text("\(item.note)")
                             HStack{
@@ -49,13 +53,15 @@ struct ContentView: View {
     }
 }
 
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
 
-// allow users to upload photos
+// allow users to upload photos ------ challenging
+
 //change the header to be my username Captain Algenis
 //allow for locking the app behind a passcode or face id
 //create the macbook pro version of this app

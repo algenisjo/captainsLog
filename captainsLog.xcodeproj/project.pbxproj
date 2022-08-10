@@ -15,7 +15,6 @@
 		791671C228A15C71009A12C5 /* LogBookBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791671C128A15C71009A12C5 /* LogBookBrain.swift */; };
 		791671C428A15CD1009A12C5 /* LogBookClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791671C328A15CD1009A12C5 /* LogBookClass.swift */; };
 		791671C628A2B84C009A12C5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791671C528A2B84C009A12C5 /* ImagePicker.swift */; };
-		791671C828A2B93E009A12C5 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791671C728A2B93E009A12C5 /* ImageSaver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +27,6 @@
 		791671C128A15C71009A12C5 /* LogBookBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookBrain.swift; sourceTree = "<group>"; };
 		791671C328A15CD1009A12C5 /* LogBookClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookClass.swift; sourceTree = "<group>"; };
 		791671C528A2B84C009A12C5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		791671C728A2B93E009A12C5 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +43,6 @@
 		3F041080286B7300005B1662 = {
 			isa = PBXGroup;
 			children = (
-				791671C528A2B84C009A12C5 /* ImagePicker.swift */,
 				3F04108B286B7300005B1662 /* captainsLog */,
 				3F04108A286B7300005B1662 /* Products */,
 			);
@@ -67,7 +64,7 @@
 				791671C328A15CD1009A12C5 /* LogBookClass.swift */,
 				791671C128A15C71009A12C5 /* LogBookBrain.swift */,
 				791671BF28A156C5009A12C5 /* AddNewNoteView.swift */,
-				791671C728A2B93E009A12C5 /* ImageSaver.swift */,
+				791671C528A2B84C009A12C5 /* ImagePicker.swift */,
 				3F041090286B7302005B1662 /* Assets.xcassets */,
 				3F041092286B7302005B1662 /* Preview Content */,
 			);
@@ -155,7 +152,6 @@
 				3F04108F286B7300005B1662 /* ContentView.swift in Sources */,
 				3F04108D286B7300005B1662 /* captainsLogApp.swift in Sources */,
 				791671C428A15CD1009A12C5 /* LogBookClass.swift in Sources */,
-				791671C828A2B93E009A12C5 /* ImageSaver.swift in Sources */,
 				791671C628A2B84C009A12C5 /* ImagePicker.swift in Sources */,
 				791671C228A15C71009A12C5 /* LogBookBrain.swift in Sources */,
 				791671C028A156C5009A12C5 /* AddNewNoteView.swift in Sources */,

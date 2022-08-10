@@ -12,4 +12,5 @@ struct note: Identifiable, Codable {
     //let date: String
     let note: String
     let date:  Date.FormatStyle.FormatOutput
+//    let image: UIImage?
 }

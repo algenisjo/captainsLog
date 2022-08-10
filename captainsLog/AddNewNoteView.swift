@@ -22,7 +22,6 @@ struct AddNewNoteView: View {
     @State private var inputImage: UIImage?
     
     var body: some View {
-        
         NavigationView{
             VStack{
                 image?
@@ -30,8 +29,15 @@ struct AddNewNoteView: View {
                     .scaledToFit()
                 
                 Form{
-                    Text("Type below.")
-                    TextEditor(text: $notes)
+                    ZStack(alignment: .leading) {
+                        if notes.isEmpty {
+                            Text("  Type Here.")
+                                .opacity(notes.isEmpty ? 0.25 : 1)
+                        }
+                        
+                        TextEditor(text: $notes)
+                        
+                    }
                 }
                 
                 HStack{
@@ -47,6 +53,7 @@ struct AddNewNoteView: View {
                     }
                     Spacer()
                 }
+                
             }
             .navigationTitle(date)
         }

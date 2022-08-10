@@ -15,6 +15,7 @@
 		791671C228A15C71009A12C5 /* LogBookBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791671C128A15C71009A12C5 /* LogBookBrain.swift */; };
 		791671C428A15CD1009A12C5 /* LogBookClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791671C328A15CD1009A12C5 /* LogBookClass.swift */; };
 		791671C628A2B84C009A12C5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791671C528A2B84C009A12C5 /* ImagePicker.swift */; };
+		79FC081328A4126100B463FB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FC081228A4126100B463FB /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		791671C128A15C71009A12C5 /* LogBookBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookBrain.swift; sourceTree = "<group>"; };
 		791671C328A15CD1009A12C5 /* LogBookClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookClass.swift; sourceTree = "<group>"; };
 		791671C528A2B84C009A12C5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		79FC081228A4126100B463FB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				791671BF28A156C5009A12C5 /* AddNewNoteView.swift */,
 				3F04108E286B7300005B1662 /* ContentView.swift */,
+				79FC081228A4126100B463FB /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79FC081328A4126100B463FB /* SettingsView.swift in Sources */,
 				3F04108F286B7300005B1662 /* ContentView.swift in Sources */,
 				3F04108D286B7300005B1662 /* captainsLogApp.swift in Sources */,
 				791671C428A15CD1009A12C5 /* LogBookClass.swift in Sources */,

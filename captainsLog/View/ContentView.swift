@@ -12,15 +12,13 @@ struct ContentView: View {
     @StateObject var myLogBook = LogBookClass()
     @State private var textInput = ""
     @State private var AddNewNoteViewIsPresented = false
-//    @State private var Username = ""
+    @State private var showSettings = false
+    @AppStorage("userName") var userName = "Captains Log"
+   // @State private var title = userName ?? "Captain's Log"
     
     var body: some View {
         NavigationView {
             List{
-//                Section("s"){
-//                    Text(Username)
-//                    TextField("Type your name here.", text: $Username)
-//                }
                 ForEach(myLogBook.logBookNotes.reversed()){ item in
                     Section(item.date){
                         VStack(alignment: .leading){
@@ -32,22 +30,28 @@ struct ContentView: View {
                     }
                 }
                 .onDelete { offsets in
-                    let reversed = Array(myLogBook.logBookNotes.reversed()) //get the reversed array -- use Array() so we don't get a ReversedCollection
-                    let items = Set(offsets.map { reversed[$0].id }) //get the IDs to delete
-                    myLogBook.logBookNotes.removeAll { items.contains($0.id) } //remove the items with IDs that match the Set
+                    let reversed = Array(myLogBook.logBookNotes.reversed())
+                    let items = Set(offsets.map { reversed[$0].id })
+                    myLogBook.logBookNotes.removeAll { items.contains($0.id) }
                 }
             }
-            .navigationTitle("Captain's Log")
+            .navigationTitle(userName)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
-                ToolbarItem{
-                    Button("New Note"){
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button("Settings") {
+                        showSettings = true
+                    }
+                    Button("New Note") {
                         AddNewNoteViewIsPresented = true
                     }
                 }
             }
             .sheet(isPresented: $AddNewNoteViewIsPresented){
                 AddNewNoteView()
+            }
+            .sheet(isPresented: $showSettings){
+                SettingsView()
             }
         }
     }

@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct AddNewNoteView: View {
-    
-//    @ObservedObject var myLogBook = LogBookClass()
+
     @Environment(\.dismiss) var dismiss
     
     @Environment(\.managedObjectContext) var moc
@@ -32,19 +31,13 @@ struct AddNewNoteView: View {
                         Spacer()
                         Button("Upload.") {
                             let note = Note(context: moc)
+                            note.id = UUID()
                             note.entry = notes
                             note.date = date
                             
                             try? moc.save()
                             dismiss()
                         }
-                        
-//                        Spacer()
-//                        Button("Upload."){
-//                            let newNote = note(note: notes, date: date)
-//                            myLogBook.logBookNotes.append(newNote)
-//                            dismiss()
-//                        }
                     }
                 }
             .navigationTitle(date)
@@ -61,7 +54,6 @@ struct AddView_Previews: PreviewProvider {
     static var previews: some View {
         AddNewNoteView()
             .previewInterfaceOrientation(.portrait)
-//            .preferredColorScheme(.dark)
     }
 }
 

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddNewNoteView: View {
     
-    @ObservedObject var myLogBook = LogBookClass()
+//    @ObservedObject var myLogBook = LogBookClass()
     @Environment(\.dismiss) var dismiss
     
     @Environment(\.managedObjectContext) var moc
@@ -30,7 +30,7 @@ struct AddNewNoteView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     HStack{
                         Spacer()
-                        Button("Test Data") {
+                        Button("Upload.") {
                             let note = Note(context: moc)
                             note.entry = notes
                             note.date = date

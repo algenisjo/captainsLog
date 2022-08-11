@@ -21,8 +21,10 @@ struct AddNewNoteView: View {
     
     //    @State private var imageData: Data?
     
+//    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-//        NavigationView{
+        NavigationView{
 //            VStack{
 //                image?
 //                    .resizable()
@@ -51,8 +53,15 @@ struct AddNewNoteView: View {
                     }
                 }
 //            }
-//            .navigationTitle(date)
-//        }
+            .navigationTitle(date)
+//            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                Button("Dismiss"){
+                    dismiss()
+                }
+            }
+
+        }
 //        .sheet(isPresented: $showingImagePicker) {
 //            ImagePicker(image: $inputImage)
 //        }

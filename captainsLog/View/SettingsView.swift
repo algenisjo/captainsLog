@@ -10,18 +10,24 @@ import SwiftUI
 struct SettingsView: View {
     
     @AppStorage("userName") var userName = ""
-    //@Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
     
-    //@AppStorage("colorScheme") var preferredColorScheme: ColorScheme? = nil
+    //@State var preferredColorScheme: ColorScheme? = nil
+//    @State private var showGreeting = true
+    
+    @Environment(\.colorScheme) private var colorScheme
     
     var body: some View {
         NavigationView{
             Form{
-                Section("Tap below to change username"){
+                Section("username"){
                     TextField("Change Username.", text: $userName)
                 }
                 
-//                Section("Light or Dark Mode?"){
+//                Section("Appearance"){
+//
+////                    Text(colorScheme == .dark ? "Dark" : "Light")
+//
 //                    List {
 //                        Button(action: { preferredColorScheme = .light }) {
 //                            HStack {
@@ -32,6 +38,8 @@ struct SettingsView: View {
 //                                }
 //                            }
 //                        }
+//
+////                        Toggle("Dark", isOn: $showGreeting)
 //
 //                        Button(action: { preferredColorScheme = .dark }) {
 //                            HStack {
@@ -47,15 +55,15 @@ struct SettingsView: View {
                 .toolbar{
                     ToolbarItem() {
                         Button("Exit") {
-                           // presentationMode.wrappedValue.dismiss()
+                            dismiss()
                         }
                     }
-                }
+                } 
             }
             .navigationTitle("Settings")
             
         }
-     //   .preferredColorScheme(preferredColorScheme)
+        //.preferredColorScheme(preferredColorScheme)
     }
     
 //    var selectedImage: some View {
@@ -70,3 +78,4 @@ struct SettingsView_Previews: PreviewProvider {
         SettingsView()
     }
 }
+

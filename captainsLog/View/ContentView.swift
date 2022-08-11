@@ -11,14 +11,16 @@ struct ContentView: View {
     
     @StateObject var myLogBook = LogBookClass()
     @State private var textInput = ""
+    
     @State private var AddNewNoteViewIsPresented = false
     @State private var showSettings = false
+    
     @AppStorage("userName") var userName = "Captains Log"
-   // @State private var title = userName ?? "Captain's Log"
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             List{
+                
                 ForEach(myLogBook.logBookNotes.reversed()){ item in
                     Section(item.date){
                         VStack(alignment: .leading){
@@ -28,6 +30,7 @@ struct ContentView: View {
                             }
                         }
                     }
+                    
                 }
                 .onDelete { offsets in
                     let reversed = Array(myLogBook.logBookNotes.reversed())
@@ -35,8 +38,8 @@ struct ContentView: View {
                     myLogBook.logBookNotes.removeAll { items.contains($0.id) }
                 }
             }
-            .navigationTitle(userName)
-            .navigationBarTitleDisplayMode(.inline)
+//            .navigationTitle(userName)
+//            .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 ToolbarItemGroup(placement: .bottomBar) {
                     Button("Settings") {
@@ -54,7 +57,7 @@ struct ContentView: View {
                 SettingsView()
             }
 //            .preferredColorScheme(preferredColorScheme)
-        }
+//        }
     }
     
    
@@ -65,7 +68,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-//            .preferredColorScheme(.dark)
+//            .preferredColorScheme(.dark) 
     }
 }
 

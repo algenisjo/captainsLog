@@ -15,10 +15,10 @@ struct ContentView: View {
     @State private var AddNewNoteViewIsPresented = false
     @State private var showSettings = false
     
-    @AppStorage("userName") var userName = "Captains Log"
+    @AppStorage("userName") var userName = "Captain's Log"
     
     var body: some View {
-//        NavigationView {
+        NavigationView {
             List{
                 
                 ForEach(myLogBook.logBookNotes.reversed()){ item in
@@ -38,13 +38,14 @@ struct ContentView: View {
                     myLogBook.logBookNotes.removeAll { items.contains($0.id) }
                 }
             }
-//            .navigationTitle(userName)
+            .navigationTitle(userName)
 //            .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 ToolbarItemGroup(placement: .bottomBar) {
-                    Button("Settings") {
-                        showSettings = true
-                    }
+//                    Button("Settings") {
+//                        showSettings = true
+//                    }
+                    Spacer()
                     Button("New Note") {
                         AddNewNoteViewIsPresented = true
                     }
@@ -57,7 +58,7 @@ struct ContentView: View {
                 SettingsView()
             }
 //            .preferredColorScheme(preferredColorScheme)
-//        }
+        }
     }
     
    

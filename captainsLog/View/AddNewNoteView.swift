@@ -49,6 +49,7 @@ struct AddView_Previews: PreviewProvider {
     static var previews: some View {
         AddNewNoteView()
             .previewInterfaceOrientation(.portrait)
+//            .preferredColorScheme(.dark)
     }
 }
 

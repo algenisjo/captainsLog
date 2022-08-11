@@ -15,7 +15,8 @@
 		791671C228A15C71009A12C5 /* LogBookBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791671C128A15C71009A12C5 /* LogBookBrain.swift */; };
 		791671C428A15CD1009A12C5 /* LogBookClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791671C328A15CD1009A12C5 /* LogBookClass.swift */; };
 		791671C628A2B84C009A12C5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791671C528A2B84C009A12C5 /* ImagePicker.swift */; };
-		797FCF3328A44CDE003E2BAC /*  DisplayModeSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FCF3228A44CDE003E2BAC /*  DisplayModeSetting.swift */; };
+		797635C128A54343006287BD /* noteData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 797635BF28A54343006287BD /* noteData.xcdatamodeld */; };
+		797635C328A543DA006287BD /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797635C228A543DA006287BD /* DataController.swift */; };
 		79FC081328A4126100B463FB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FC081228A4126100B463FB /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +30,8 @@
 		791671C128A15C71009A12C5 /* LogBookBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookBrain.swift; sourceTree = "<group>"; };
 		791671C328A15CD1009A12C5 /* LogBookClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookClass.swift; sourceTree = "<group>"; };
 		791671C528A2B84C009A12C5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		797FCF3228A44CDE003E2BAC /*  DisplayModeSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " DisplayModeSetting.swift"; sourceTree = "<group>"; };
+		797635C028A54343006287BD /* noteData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = noteData.xcdatamodel; sourceTree = "<group>"; };
+		797635C228A543DA006287BD /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		79FC081228A4126100B463FB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +89,6 @@
 				791671BF28A156C5009A12C5 /* AddNewNoteView.swift */,
 				3F04108E286B7300005B1662 /* ContentView.swift */,
 				79FC081228A4126100B463FB /* SettingsView.swift */,
-				797FCF3228A44CDE003E2BAC /*  DisplayModeSetting.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,7 +97,9 @@
 			isa = PBXGroup;
 			children = (
 				791671C128A15C71009A12C5 /* LogBookBrain.swift */,
+				797635C228A543DA006287BD /* DataController.swift */,
 				791671C328A15CD1009A12C5 /* LogBookClass.swift */,
+				797635BF28A54343006287BD /* noteData.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,8 +186,9 @@
 				3F04108F286B7300005B1662 /* ContentView.swift in Sources */,
 				3F04108D286B7300005B1662 /* captainsLogApp.swift in Sources */,
 				791671C428A15CD1009A12C5 /* LogBookClass.swift in Sources */,
+				797635C328A543DA006287BD /* DataController.swift in Sources */,
 				791671C628A2B84C009A12C5 /* ImagePicker.swift in Sources */,
-				797FCF3328A44CDE003E2BAC /*  DisplayModeSetting.swift in Sources */,
+				797635C128A54343006287BD /* noteData.xcdatamodeld in Sources */,
 				791671C228A15C71009A12C5 /* LogBookBrain.swift in Sources */,
 				791671C028A156C5009A12C5 /* AddNewNoteView.swift in Sources */,
 			);
@@ -385,6 +389,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		797635BF28A54343006287BD /* noteData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				797635C028A54343006287BD /* noteData.xcdatamodel */,
+			);
+			currentVersion = 797635C028A54343006287BD /* noteData.xcdatamodel */;
+			path = noteData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3F041081286B7300005B1662 /* Project object */;
 }

@@ -22,8 +22,8 @@ struct AddNewNoteView: View {
     //    @State private var imageData: Data?
     
     var body: some View {
-        NavigationView{
-            VStack{
+//        NavigationView{
+//            VStack{
 //                image?
 //                    .resizable()
 //                    .scaledToFit()
@@ -38,6 +38,7 @@ struct AddNewNoteView: View {
                         TextEditor(text: $notes)
                         
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     HStack{
                         Spacer()
                         Button("Upload."){
@@ -49,9 +50,9 @@ struct AddNewNoteView: View {
                         }
                     }
                 }
-            }
-            .navigationTitle(date)
-        }
+//            }
+//            .navigationTitle(date)
+//        }
 //        .sheet(isPresented: $showingImagePicker) {
 //            ImagePicker(image: $inputImage)
 //        }

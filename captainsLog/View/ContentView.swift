@@ -41,14 +41,14 @@ struct ContentView: View {
             .navigationTitle(userName)
 //            .navigationBarTitleDisplayMode(.inline)
             .toolbar{
-                ToolbarItemGroup(placement: .bottomBar) {
+//                ToolbarItemGroup() {
 //                    Button("Settings") {
 //                        showSettings = true
 //                    }
-                    Spacer()
+//                    Spacer()
                     Button("New Note") {
                         AddNewNoteViewIsPresented = true
-                    }
+                    
                 }
             }
             .sheet(isPresented: $AddNewNoteViewIsPresented){

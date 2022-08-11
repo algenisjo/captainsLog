@@ -16,6 +16,7 @@ struct AddNewNoteView: View {
     @State private var notes = ""
     @State private var date = String( Date.now.formatted(.dateTime.day().month().year()) )
     
+    
     var body: some View {
         NavigationView{
                 Form{
@@ -34,6 +35,7 @@ struct AddNewNoteView: View {
                             note.id = UUID()
                             note.entry = notes
                             note.date = date
+                            note.dateOne = Date.now
                             
                             try? moc.save()
                             dismiss()

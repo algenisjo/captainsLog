@@ -26,31 +26,27 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-//            VStack{
-//                List(note){ item in
-//                        Section(item.date){
-//                            VStack(alignment: .leading){
-//                                Text("\(item.entry)")
-//                                HStack{
-//                                    Spacer()
-//                                }
-//                            }
-//                        }
-//                    }
-//                    .onDelete { offsets in
-//                        let reversed = Array(myLogBook.logBookNotes.reversed())
-//                        let items = Set(offsets.map { reversed[$0].id })
-//                        myLogBook.logBookNotes.removeAll { items.contains($0.id) }
-//                    }
-//                }
-                    List(note) {item in
-                        VStack{
-                            HStack{
-                                Text(item.date ?? "Date 1")
-                                Spacer()
-                            }
-                            Text(item.entry ?? "Unknown")
-                    }
+            //            VStack{
+            //                List(note){ item in
+            //                        Section(item.date){
+            //                            VStack(alignment: .leading){
+            //                                Text("\(item.entry)")
+            //                                HStack{
+            //                                    Spacer()
+            //                                }
+            //                            }
+            //                        }
+            //                    }
+            //                    .onDelete { offsets in
+            //                        let reversed = Array(myLogBook.logBookNotes.reversed())
+            //                        let items = Set(offsets.map { reversed[$0].id })
+            //                        myLogBook.logBookNotes.removeAll { items.contains($0.id) }
+            //                    }
+            //                }
+            List(note) {item in
+                Section(item.date ?? "Date 1"){
+                        Text(item.entry ?? "Unknown")
+                }
             }
             .navigationTitle(userName)
             .toolbar{

@@ -20,7 +20,6 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List{
-                
                 ForEach(myLogBook.logBookNotes.reversed()){ item in
                     Section(item.date){
                         VStack(alignment: .leading){
@@ -39,16 +38,9 @@ struct ContentView: View {
                 }
             }
             .navigationTitle(userName)
-//            .navigationBarTitleDisplayMode(.inline)
             .toolbar{
-//                ToolbarItemGroup() {
-//                    Button("Settings") {
-//                        showSettings = true
-//                    }
-//                    Spacer()
                     Button("New Note") {
                         AddNewNoteViewIsPresented = true
-                    
                 }
             }
             .sheet(isPresented: $AddNewNoteViewIsPresented){
@@ -57,24 +49,13 @@ struct ContentView: View {
             .sheet(isPresented: $showSettings){
                 SettingsView()
             }
-//            .preferredColorScheme(preferredColorScheme)
         }
     }
-    
-   
-    
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-//            .preferredColorScheme(.dark) 
     }
 }
-
-// allow users to upload photos ------ challenging
-
-//allow for locking the app behind a passcode or face id
-//create the macbook pro version of this app
 

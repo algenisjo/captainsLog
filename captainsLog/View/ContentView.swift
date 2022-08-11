@@ -19,43 +19,30 @@ struct ContentView: View {
     
     //Core Data -------------------------------------------------------------
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var note: FetchedResults<Note>
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.entry, order: .reverse)
+    ]) var note: FetchedResults<Note>
     //Core Data -------------------------------------------------------------
     
     var body: some View {
         NavigationView {
 //            VStack{
-//                List{
-//                    ForEach(myLogBook.logBookNotes.reversed()){ item in
+//                List(note){ item in
 //                        Section(item.date){
 //                            VStack(alignment: .leading){
-//                                Text("\(item.note)")
+//                                Text("\(item.entry)")
 //                                HStack{
 //                                    Spacer()
 //                                }
 //                            }
 //                        }
-//
 //                    }
 //                    .onDelete { offsets in
 //                        let reversed = Array(myLogBook.logBookNotes.reversed())
 //                        let items = Set(offsets.map { reversed[$0].id })
 //                        myLogBook.logBookNotes.removeAll { items.contains($0.id) }
 //                    }
-//                    //                HStack{
-//                    //                    Spacer()
-//                    //                Button("Test Data") {
-//                    //                    let note = Note(context: moc)
-//                    //                    note.id = UUID()
-//                    //                    note.note = "This is a core data note."
-//                    //                    note.date = "d"
-//                    //
-//                    //                    try? moc.save()
-//                    //
-//                    //                }
-//                    //                }
 //                }
-//                Section("testing data"){
                     List(note) {item in
                         VStack{
                             HStack{
@@ -63,9 +50,7 @@ struct ContentView: View {
                                 Spacer()
                             }
                             Text(item.entry ?? "Unknown")
-                        }
-//                    }
-//                }
+                    }
             }
             .navigationTitle(userName)
             .toolbar{
@@ -76,9 +61,6 @@ struct ContentView: View {
             .sheet(isPresented: $AddNewNoteViewIsPresented){
                 AddNewNoteView()
             }
-            //            .sheet(isPresented: $showSettings){
-            //                SettingsView()
-            //            }
         }
     }
 }

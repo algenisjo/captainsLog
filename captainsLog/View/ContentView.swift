@@ -10,10 +10,13 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var AddNewNoteViewIsPresented = false
-    
+    let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
     //Core Data -------------------------------------------------------------
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var note: FetchedResults<Note>
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.dateOne, order: .reverse)
+    ]) var note: FetchedResults<Note>
+    
     //Core Data -------------------------------------------------------------
     
     var body: some View {

@@ -15,18 +15,18 @@ struct AddNewNoteView: View {
     @State private var notes = ""
     @State private var date = Date.now.formatted(.dateTime.day().month().year())
     
-    @State private var image: Image?
-    @State private var showingImagePicker = false
-    @State private var inputImage: UIImage?
+//    @State private var image: Image?
+//    @State private var showingImagePicker = false
+//    @State private var inputImage: UIImage?
     
     //    @State private var imageData: Data?
     
     var body: some View {
         NavigationView{
             VStack{
-                image?
-                    .resizable()
-                    .scaledToFit()
+//                image?
+//                    .resizable()
+//                    .scaledToFit()
                 
                 Form{
                     ZStack(alignment: .leading) {
@@ -52,16 +52,16 @@ struct AddNewNoteView: View {
             }
             .navigationTitle(date)
         }
-        .sheet(isPresented: $showingImagePicker) {
-            ImagePicker(image: $inputImage)
-        }
-        .onChange(of: inputImage) { _ in loadImage() }
+//        .sheet(isPresented: $showingImagePicker) {
+//            ImagePicker(image: $inputImage)
+//        }
+//        .onChange(of: inputImage) { _ in loadImage() }
     }
     
-    func loadImage() {
-        guard let inputImage = inputImage else { return }
-        image = Image(uiImage: inputImage)
-    }
+//    func loadImage() {
+//        guard let inputImage = inputImage else { return }
+//        image = Image(uiImage: inputImage)
+//    }
 }
 
 struct AddView_Previews: PreviewProvider {

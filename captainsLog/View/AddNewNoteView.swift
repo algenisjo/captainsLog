@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddNewNoteView: View {
-
+    
     @Environment(\.dismiss) var dismiss
     
     @Environment(\.managedObjectContext) var moc
@@ -19,19 +19,23 @@ struct AddNewNoteView: View {
     
     var body: some View {
         NavigationView{
-                Form{
-                    ZStack(alignment: .leading) {
-                        if notes.isEmpty {
-                            Text("  Type Here.")
-                                .opacity(notes.isEmpty ? 0.25 : 1)
-                        }
-                        TextEditor(text: $notes)
+            Form{
+                ZStack(alignment: .leading) {
+                    if notes.isEmpty {
+                        Text("  Type Here.")
+                            .opacity(notes.isEmpty ? 0.25 : 1)
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    HStack{
-                        Spacer()
-                        Button("Upload.") {
-                            notes = notes.trimmingCharacters(in: .whitespacesAndNewlines)
+                    TextEditor(text: $notes)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                HStack{
+                    Spacer()
+                    Button("Upload.") {
+                        notes = notes.trimmingCharacters(in: .whitespacesAndNewlines)
+                        
+                        if notes.isEmpty {
+                            dismiss()
+                        } else {
                             let note = Note(context: moc)
                             note.id = UUID()
                             note.entry = notes
@@ -43,6 +47,7 @@ struct AddNewNoteView: View {
                         }
                     }
                 }
+            }
             .navigationTitle(date)
             .toolbar {
                 Button("Dismiss"){

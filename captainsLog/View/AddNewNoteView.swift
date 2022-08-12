@@ -32,7 +32,7 @@ struct AddNewNoteView: View {
                     Spacer()
                     Button("Upload.") {
                         notes = notes.trimmingCharacters(in: .whitespacesAndNewlines)
-                        
+                
                         if notes.isEmpty {
                             dismiss()
                         } else {
@@ -50,9 +50,13 @@ struct AddNewNoteView: View {
             }
             .navigationTitle(date)
             .toolbar {
-                Button("Dismiss"){
+                Button {
                     dismiss()
+                } label: {
+                    Image(systemName: "clear.fill")
+                        .font(.body)
                 }
+
             }
             .colorScheme(.dark)
         }

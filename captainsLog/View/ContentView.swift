@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var AddNewNoteViewIsPresented = false
-    let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+    
     //Core Data -------------------------------------------------------------
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [
@@ -32,8 +32,11 @@ struct ContentView: View {
             }
             .navigationTitle("Captain's Log")
             .toolbar{
-                Button("New Note") {
+                Button {
                     AddNewNoteViewIsPresented = true
+                } label: {
+                    Image(systemName: "square.and.pencil")
+                        .font(.body)
                 }
             }
             .sheet(isPresented: $AddNewNoteViewIsPresented){

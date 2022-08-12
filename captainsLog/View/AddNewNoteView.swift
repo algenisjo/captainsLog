@@ -31,6 +31,7 @@ struct AddNewNoteView: View {
                     HStack{
                         Spacer()
                         Button("Upload.") {
+                            notes = notes.trimmingCharacters(in: .whitespacesAndNewlines)
                             let note = Note(context: moc)
                             note.id = UUID()
                             note.entry = notes

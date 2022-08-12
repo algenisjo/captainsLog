@@ -32,15 +32,14 @@ struct ContentView: View {
             }
             .navigationTitle("Captain's Log")
             .toolbar{
-                Button {
-                    AddNewNoteViewIsPresented = true
-                } label: {
-                    Image(systemName: "square.and.pencil")
-                        .font(.body)
+                NavigationLink(destination: AddNewNoteView(), isActive: $AddNewNoteViewIsPresented ) {
+                    Button {
+                        AddNewNoteViewIsPresented = true
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                            .font(.body)
+                    }
                 }
-            }
-            .sheet(isPresented: $AddNewNoteViewIsPresented){
-                AddNewNoteView()
             }
         }
         .colorScheme(.dark)

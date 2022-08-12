@@ -54,8 +54,11 @@ struct AddNewNoteView: View {
                     dismiss()
                 }
             }
+            .colorScheme(.dark)
         }
+        
     }
+    
 }
 
 struct AddView_Previews: PreviewProvider {

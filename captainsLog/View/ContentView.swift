@@ -40,6 +40,7 @@ struct ContentView: View {
                 AddNewNoteView()
             }
         }
+        .colorScheme(.dark)
     }
     
     func deleteNote(at offsets: IndexSet) {

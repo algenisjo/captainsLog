@@ -16,7 +16,6 @@ struct AddNewNoteView: View {
     @State private var notes = ""
     @State private var date = String( Date.now.formatted(.dateTime.day().month().year()) )
     
-    
     var body: some View {
             VStack{
                     ZStack(alignment: .leading) {
@@ -62,9 +61,8 @@ struct AddNewNoteView: View {
                     .padding()
                             .navigationBarHidden(true)
                 Spacer()
-            } // end of vstack
-        } // end of view
-//    }
+            }
+        }
 }
 
 struct AddView_Previews: PreviewProvider {

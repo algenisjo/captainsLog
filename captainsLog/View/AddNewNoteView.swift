@@ -34,6 +34,13 @@ struct AddNewNoteView: View {
                                }
                                .padding()
                     HStack{
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image(systemName: "chevron.backward.2")
+                                .font(.title3)
+                        }
+                        
                         Spacer()
                         Button("Upload.") {
                             notes = notes.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -53,17 +60,7 @@ struct AddNewNoteView: View {
                         }
                     }
                     .padding()
-                            .navigationTitle(date)
-//                            .navigationBarHidden(true)
-                .toolbar {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "clear.fill")
-                            .font(.body)
-                    }
-                    
-                }
+                            .navigationBarHidden(true)
                 Spacer()
             } // end of vstack
         } // end of view

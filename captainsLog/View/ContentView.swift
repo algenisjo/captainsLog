@@ -3,7 +3,9 @@
 //  captainsLog
 //
 //  Created by Algenis on 6/28/22.
-//
+
+// app icons is attributed below:
+// <a href='https://www.freepik.com/vectors/cute-astronaut'>Cute astronaut vector created by catalyststuff - www.freepik.com</a>
 
 import SwiftUI
 
@@ -16,21 +18,18 @@ struct ContentView: View {
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.dateOne, order: .reverse)
     ]) var note: FetchedResults<Note>
-    
     //Core Data -------------------------------------------------------------
     
     var body: some View {
         NavigationView {
             List{
-            
-            ForEach(note){ item in
+                ForEach(note){ item in
                     Section(item.date ?? "Date 1"){
-                            Text(item.entry ?? "Unknown")
+                        Text(item.entry ?? "Unknown")
                     }
+                }
+                .onDelete(perform: deleteNote)
             }
-            .onDelete(perform: deleteNote)
-            }
-            .navigationTitle("Captain's Log")
             .toolbar{
                 NavigationLink(destination: AddNewNoteView(), isActive: $AddNewNoteViewIsPresented ) {
                     Button {
@@ -41,6 +40,8 @@ struct ContentView: View {
                     }
                 }
             }
+            .navigationTitle("Captain's Log")
+            .navigationBarTitleDisplayMode(.inline)
         }
         .colorScheme(.dark)
     }

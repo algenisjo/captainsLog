@@ -14,7 +14,6 @@
 		791671C028A156C5009A12C5 /* AddNewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791671BF28A156C5009A12C5 /* AddNewNoteView.swift */; };
 		797635C128A54343006287BD /* noteData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 797635BF28A54343006287BD /* noteData.xcdatamodeld */; };
 		797635C328A543DA006287BD /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797635C228A543DA006287BD /* DataController.swift */; };
-		79FC081328A4126100B463FB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FC081228A4126100B463FB /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +25,6 @@
 		791671BF28A156C5009A12C5 /* AddNewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNoteView.swift; sourceTree = "<group>"; };
 		797635C028A54343006287BD /* noteData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = noteData.xcdatamodel; sourceTree = "<group>"; };
 		797635C228A543DA006287BD /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		79FC081228A4126100B463FB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +79,6 @@
 			children = (
 				791671BF28A156C5009A12C5 /* AddNewNoteView.swift */,
 				3F04108E286B7300005B1662 /* ContentView.swift */,
-				79FC081228A4126100B463FB /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,7 +162,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79FC081328A4126100B463FB /* SettingsView.swift in Sources */,
 				3F04108F286B7300005B1662 /* ContentView.swift in Sources */,
 				3F04108D286B7300005B1662 /* captainsLogApp.swift in Sources */,
 				797635C328A543DA006287BD /* DataController.swift in Sources */,
